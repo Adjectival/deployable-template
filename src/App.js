@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
 import { Router, browserHistory, Route, Link } from 'react-router';
-import logo from '../public/images/favicon.png';
+
 import './App.css';
 
 const Page = ({ title }) => (
     <div className="App">
       <div className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <h1>
+          <span className="fa-stack fa-lg">
+  <i className="fa fa-square-o fa-stack-2x"></i>
+  <i className="fa fa-flag fa-stack-1x fa-inverse"></i>
+</span>Font Awesome Sauce Box
+          </h1>
         <h2>{title}</h2>
       </div>
       <p className="App-intro">
         This is the {title} page.
       </p>
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-flask fa-stack-2x"></i>
-        <i class="fa fa-fire fa-stack-1x fa-inverse"></i>
-</span>
       <p>
         <Link to="/">Home</Link>
       </p>
