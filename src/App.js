@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import { Router, browserHistory, Route, Link } from 'react-router';
-import { Button, ButtonGroup } from 'react-bootstrap';
+import { Button, ButtonGroup, DropdownButton, MenuItem } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
 
 import './App.css';
 
 const Page = ({ title }) => (
     <div className="App">
-      <div className="App-header row justify-content-around align-items-center">
+      <div className="App-header row justify-content-between align-items-center">
           <h2>F<FontAwesome
             name='cog'
             className='fa-1x'
@@ -29,10 +28,10 @@ const Page = ({ title }) => (
       </p>
 
       <p>
-        <ButtonGroup>
+        <ButtonGroup justified>
           <Button
             name='button'
-            className="btn-lg btn-danger"
+            className="btn-secondary btn-danger"
           >Close <span className="fa-stack">
             <FontAwesome
               name='square'
@@ -45,14 +44,14 @@ const Page = ({ title }) => (
               name='window-close'
               className='fa-stack-1x text-danger'
               size='1x'
-              style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.3)' }}
+              style={{  }}
             />
           </span>
           </Button>
           <Button
             name='button'
-            className="btn-lg btn-success"
-          >Commune <span className="fa-stack">
+            className="btn-secondary btn-info"
+          >I/O <span className="fa-stack">
             <FontAwesome
               name='comment'
               className='fa-stack-2x'
@@ -61,16 +60,34 @@ const Page = ({ title }) => (
             />
             <FontAwesome
               name='microchip'
-              className='fa-stack-1x text-success'
+              className='fa-stack-1x text-info'
               size='1x'
-              style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.3)' }}
+              style={{  }}
             />
           </span>
           </Button>
           <Button
             name='button'
-            className="btn-lg btn-primary"
-          >Acquire <span className="fa-stack">
+            className="btn-secondary btn-warning"
+          >Rate <span className="fa-stack">
+            <FontAwesome
+              name='star'
+              className='fa-stack-2x'
+              size='2x'
+              style={{  }}
+            />
+            <FontAwesome
+              name='star-o'
+              className='fa-stack-1x text-warning'
+              size='1x'
+              style={{  }}
+            />
+          </span>
+          </Button>
+          <Button
+            name='button'
+            className="btn-secondary btn-success"
+          >Spend <span className="fa-stack">
             <FontAwesome
               name='circle'
               className='fa-stack-2x'
@@ -78,13 +95,39 @@ const Page = ({ title }) => (
               style={{  }}
             />
             <FontAwesome
-              name='flag'
-              className='fa-stack-1x text-primary'
+              name='money'
+              className='fa-stack-1x text-success'
               size='1x'
-              style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.3)' }}
+              style={{  }}
             />
           </span>
           </Button>
+          <DropdownButton
+            name='button'
+            className="btn-secondary"
+            title='Edit'
+
+            >
+            <span className="fa-stack">
+            <FontAwesome
+              name='cloud'
+              className='fa-stack-2x'
+              size='2x'
+              style={{  }}
+            />
+            <FontAwesome
+              name='terminal'
+              className='fa-stack-1x'
+              size='1x'
+              style={{ color: 'white' }}
+            />
+          </span>
+          <MenuItem eventKey="1">Action</MenuItem>
+          <MenuItem eventKey="2">Another action</MenuItem>
+          <MenuItem eventKey="3" active>Active Item</MenuItem>
+          <MenuItem divider />
+          <MenuItem eventKey="4">Separated link</MenuItem>
+        </DropdownButton>
         </ButtonGroup>
       </p>
       <p className="App-intro mt-3">
@@ -100,13 +143,9 @@ const Page = ({ title }) => (
 
       >Learn More
       </Button>
-      <p>
+      <p className="row justify-content-around">
         <Link to="/">Home</Link>
-      </p>
-      <p>
         <Link to="/about">About</Link>
-      </p>
-      <p>
         <Link to="/settings">Settings</Link>
       </p>
     </div>
