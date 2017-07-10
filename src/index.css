@@ -10,6 +10,13 @@ body {
   color: white;
 }
 
+.modal-container {
+  position: relative;
+}
+.modal-container .modal, .modal-container .modal-backdrop {
+  position: absolute;
+}
+
 .App-intro {
   font-size: large;
 }

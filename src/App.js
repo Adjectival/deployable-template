@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Router, browserHistory, Route, Link } from 'react-router';
-import { Button, ButtonGroup, DropdownButton, MenuItem } from 'react-bootstrap';
+import { Button, ButtonGroup, MenuItem } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
 
 import './App.css';
+import './Modal.js';
 
 const Page = ({ title }) => (
     <div className="App">
@@ -23,11 +24,11 @@ const Page = ({ title }) => (
             spin
           />x</h1>
       </div>
-      <p className="App-intro mt-3">
+      <p className="App-intro row ml-3 mt-3">
         Consider buttons like these
       </p>
 
-      <p>
+      <p className="row ml-3 justify-content-between">
         <ButtonGroup justified>
           <Button
             name='button'
@@ -44,7 +45,7 @@ const Page = ({ title }) => (
               name='window-close'
               className='fa-stack-1x text-danger'
               size='1x'
-              style={{  }}
+              style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.3)' }}
             />
           </span>
           </Button>
@@ -74,13 +75,21 @@ const Page = ({ title }) => (
               name='star'
               className='fa-stack-2x'
               size='2x'
-              style={{  }}
+              style={{
+                textShadow: '0 3px 0 rgba(255, 0, 0, 1)',
+                textShadow: '3px 0 0 rgba(255, 0, 0, 1)',
+                textShadow: '0 0 3px rgba(255, 0, 0, 1)'
+                  }}
             />
             <FontAwesome
               name='star-o'
               className='fa-stack-1x text-warning'
               size='1x'
-              style={{  }}
+              style={{
+                textShadow: '0 3px 0 rgba(255, 0, 0, 1)',
+                textShadow: '3px 0 0 rgba(255, 0, 0, 1)',
+                textShadow: '0 0 3px rgba(255, 0, 0, 1)'
+                  }}
             />
           </span>
           </Button>
@@ -102,16 +111,13 @@ const Page = ({ title }) => (
             />
           </span>
           </Button>
-          <DropdownButton
+          <Button
             name='button'
             className="btn-secondary"
-            title='Edit'
-
-            >
-            <span className="fa-stack">
+            >Edit<span className="fa-stack">
             <FontAwesome
               name='cloud'
-              className='fa-stack-2x'
+              className='fa-stack-2x fa-flip-vertical'
               size='2x'
               style={{  }}
             />
@@ -119,15 +125,10 @@ const Page = ({ title }) => (
               name='terminal'
               className='fa-stack-1x'
               size='1x'
-              style={{ color: 'white' }}
+              style={{ color: 'gold' }}
             />
           </span>
-          <MenuItem eventKey="1">Action</MenuItem>
-          <MenuItem eventKey="2">Another action</MenuItem>
-          <MenuItem eventKey="3" active>Active Item</MenuItem>
-          <MenuItem divider />
-          <MenuItem eventKey="4">Separated link</MenuItem>
-        </DropdownButton>
+        </Button>
         </ButtonGroup>
       </p>
       <p className="App-intro mt-3">
@@ -137,16 +138,17 @@ const Page = ({ title }) => (
       </h2>
       <h1>The Font Awesome Sauce Box
       </h1>
-      <Button
-        name='button'
-        className="btn-lg btn-secondary mono"
+      <span className="row justify-content-around">
+        <Button
+          className="btn btn-lg mono modal-container"
+        >Learn More
+        </Button>
 
-      >Learn More
-      </Button>
-      <p className="row justify-content-around">
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/settings">Settings</Link>
+      </span>
+      <p className="row justify-content-around mt-4">
+        <Button className="btn btn-secondary btn-lg" to="/">Home</Button>
+        <Button className="btn btn-secondary btn-lg" to="/about">About</Button>
+        <Button className="btn btn-secondary btn-lg" to="/settings">Settings</Button>
       </p>
     </div>
 );
